@@ -1,26 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export class App extends Component {
+
+  state = {
+    names: [
+      'Rashad', 'Alice', 'X Æ A-Xii', 'Beyonce', 'Khloe Kardashian', 'George Bush', 'Queen Elizabeth', 'Yeezy', 'Ivanka Trump', 'Leonardo DiCaprio', 
+    ],
+    searchTerm: ''
+  }
+
+  render() {
+
+    const styles = {
+      textAlign: 'center', 
+      paddingTop: '30vh'
+    }
+
+    return (
+      <div style={styles}>
+        <input type='text' value={this.state.searchTerm} placeholder='Search for a name!'/>
+
+        <h3>These are the important names:</h3>
+        
+      </div>
+    )
+  }
 }
 
 export default App;
+
